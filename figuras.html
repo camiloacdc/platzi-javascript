@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> Figuras geométricas</h1>
+        <p>Calculadora de áreas y perimetros de figuras geométricas</p>
+    </header>
+    <div class="container">
+    <section>
+        <h2>Calcula perímetros y áreas de un cuadrado</h2>
+        <label for="lado">
+            Escribe la medida del lado del cuadrado
+        </label>
+     <form action="">
+          <input type="number" id="lado" name="lado">
+          <button type="button" onclick="calcularAreaCuadrado();">Calcula el área</button>
+          <button type="button" onclick="calcularPerimetroCuadrado();">Calcula el perimetro</button>
+     </form>
+    </section>
+    <section>
+        <h2>Calcula perímetros y áreas de un circulo</h2>
+        <label for="radio">
+            Escribe la medida del radio del circulo
+        </label>
+     <form action="">
+          <input type="number" id="radio" name="radio">
+          <button type="button" onclick="calcularAreaCirculo();">Calcula el área</button>
+          <button type="button" onclick="calcularPerimetroCirculo();">Calcula el perimetro</button>
+     </form>
+    </section>
+    <section>
+        <h2>Calcula perímetros y áreas de un triángulos</h2>
+        <label for="lado1">
+            Escribe las medidas de los lados del triángulo
+        </label>
+     <form action="">
+          <input type="number" id="lado1" name="lado1">
+          <input type="number" id="lado2" name="lado2">
+          <input type="number" id="base" name="base">
+          <input type="number" id="altura" name="altura">
+          <button type="button" onclick="calcularAreaTriangulo();">Calcula el área</button>
+          <button type="button" onclick="calcularPerimetroTriangulo();">Calcula el perimetro</button>
+     </form>
+    </section>
+</div>
+</body>
+<script src="./figuras.js"></script>
+</html>
