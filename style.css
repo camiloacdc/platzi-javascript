@@ -1,0 +1,132 @@
+.header{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header > p{
+font-size: 20px;
+font-weight: bold;
+}
+.container{
+     display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex: 1;
+}
+.container-cuadrado{
+     border-radius: 20px;
+     border:1px solid black;     
+     flex-grow: 1;
+     background: #DAF7A6;
+     margin: 10px;
+     min-height: 500px;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     justify-content:space-evenly;
+}
+.container-form{
+     
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+.container-circulo{
+     border-radius: 20px;
+     border:1px solid black;  
+     flex-grow: 1;
+     background: #FF5733 ;
+     margin: 10px;
+     min-height: 500px;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     justify-content: space-evenly;
+}
+.container-triangulo{
+     border-radius: 20px;
+     border:1px solid black;  
+     flex-grow: 2;
+     background: #DBFF33 ;
+     margin: 10px;
+     min-height: 500px;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     justify-content: space-around;
+}
+.container-circulo>h2,.container-cuadrado>h2{
+     font-family: 'Zen Loop', cursive;
+     display: block;
+     margin-top: -60px;
+     padding-left: 5px;
+}
+.container-triangulo>h2{
+     display: block;
+     margin-top: -10px;
+     padding-left: 5px;
+}
+.container-circulo > label,.container-cuadrado > label,.container-triangulo> label{
+     font-weight: bolder;
+     color: black;
+     font-size: 20px;
+     margin-top:-100px;
+     padding-left: 8px;
+}
+.container-input{
+     margin-bottom: 10px;
+     margin-left: 5px;
+     margin-right:5px;
+     height: 50px;
+     width: 150px;
+     border-radius: 8px;
+     border: black 1px solid;
+     background: transparent;
+     font-size: 30px;
+}
+.container-form-button{
+     margin-bottom: 10px;
+     height: 50px;
+     width:155px;
+     font: inherit;
+     background:  #DADED4;
+     border-radius: 8px;
+     font-weight: bold;
+     margin-left: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.container-form-triangulo-perimetro{
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     justify-content: space-evenly;
+}
+.container-form-triangulo-area{
+     display: flex;
+     flex-direction: column;
+     align-items:flex-start;
+     justify-content: space-between;
+}
+.container-form-triangulo{
+     display: flex;
+     flex-direction: row; 
+     justify-content: space-evenly;
+   
+}
+body{
+     font-family: 'Zen Loop', cursive;
+     
+}

@@ -4,50 +4,63 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1> Figuras geométricas</h1>
         <p>Calculadora de áreas y perimetros de figuras geométricas</p>
     </header>
     <div class="container">
-    <section>
+    <section class="container-cuadrado">
         <h2>Calcula perímetros y áreas de un cuadrado</h2>
         <label for="lado">
             Escribe la medida del lado del cuadrado
         </label>
-     <form action="">
-          <input type="number" id="lado" name="lado">
-          <button type="button" onclick="calcularAreaCuadrado();">Calcula el área</button>
-          <button type="button" onclick="calcularPerimetroCuadrado();">Calcula el perimetro</button>
+     <form action="" class="container-form">
+          <input type="number" id="lado" name="lado" class="container-input">
+          <button type="button" class="container-form-button" onclick="calcularAreaCuadrado();">Calcula el área</button>
+          <button type="button" class="container-form-button" onclick="calcularPerimetroCuadrado();">Calcula el perimetro</button>
      </form>
     </section>
-    <section>
+    <section class="container-circulo">
         <h2>Calcula perímetros y áreas de un circulo</h2>
         <label for="radio">
             Escribe la medida del radio del circulo
         </label>
-     <form action="">
-          <input type="number" id="radio" name="radio">
-          <button type="button" onclick="calcularAreaCirculo();">Calcula el área</button>
-          <button type="button" onclick="calcularPerimetroCirculo();">Calcula el perimetro</button>
+     <form action="" class="container-form">
+          <input type="number" id="radio" name="radio" class="container-input">
+          <button type="button" class="container-form-button" onclick="calcularAreaCirculo();">Calcula el área</button>
+          <button type="button" class="container-form-button" onclick="calcularPerimetroCirculo();">Calcula el perimetro</button>
      </form>
     </section>
-    <section>
+    <section class="container-triangulo">
         <h2>Calcula perímetros y áreas de un triángulos</h2>
         <label for="lado1">
             Escribe las medidas de los lados del triángulo
         </label>
-     <form action="">
-          <input type="number" id="lado1" name="lado1">
-          <input type="number" id="lado2" name="lado2">
-          <input type="number" id="base" name="base">
-          <input type="number" id="altura" name="altura">
-          <button type="button" onclick="calcularAreaTriangulo();">Calcula el área</button>
-          <button type="button" onclick="calcularPerimetroTriangulo();">Calcula el perimetro</button>
+     <form action="" class="container-form-triangulo">
+         <div class="container-form-triangulo-perimetro">
+          <input type="number" id="lado1" name="lado1" class="container-input">
+          <input type="number" id="lado2" name="lado2" class="container-input">
+          <input type="number" id="lado3" name="lado3" class="container-input">
+          <button type="button" class="container-form-button" onclick="calcularPerimetroTriangulo();">Calcula el perimetro</button>
+        </div>
+        <div class="container-form-triangulo-area">
+          <input type="number" id="base" name="base" class="container-input">
+          <input type="number" id="altura" name="altura" class="container-input">
+          <button type="button"class="container-form-button" onclick="calcularAreaTriangulo();">Calcula el área</button>
+         
+        </div>
      </form>
     </section>
 </div>
+<footer class="footer">
+
+</footer>
 </body>
 <script src="./figuras.js"></script>
 </html>
