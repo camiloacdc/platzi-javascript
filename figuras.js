@@ -28,7 +28,7 @@ function areaTriangulo(base,altura){
     if(isNaN(area)){alert("ingresa un numero")}else{
         return area;}
 }
-
+//circulo
 
 function diametroCirculo(radio){
     diametro=radio*2;
@@ -52,6 +52,8 @@ function areaCirculo(radio){
         return area;
        }
 }
+
+//lamados html
 function calcularAreaCuadrado(){
     const lado=document.getElementById("lado")
     const value=lado.value;
@@ -94,4 +96,16 @@ function calcularPerimetroTriangulo(){
     const valueBase=base.value;
     const perimetro=perimetroTriangulo(valueL1,valueL2,valueBase);
     alert("el perimetro del triángulo es:"+perimetro+" "+"cm");
+}
+//Calcular altura triangulo isósceles
+
+function alturaTrianguloIsosceles(lado1,lado2,base){
+    
+    if(lado1==lado2 && lado1!=base){
+        altura=(Math.sqrt (Math.pow(lado1,2)-(Math.pow(base,2)/4))).toFixed(2)
+         
+    }else{
+        alert("no es un triángulo isósceles") 
+    }
+    return altura;
 }
