@@ -23,10 +23,12 @@
                 <label for="descuento"> Escribe el descuento del producto</label>
                 <input type="number" name="descuento" id="descuento" class="form-container-input">
                 <label for="textDescuento"> ingresa cupon</label>
-                <input type="number" name="textDescuento" id="textDescuento" class="form-container-input">
-                <input type="checkbox" name="tieneDescuento" id="tieneDescuento">Tienes un cupon?
+                <input type="text" name="textDescuento" id="textDescuento" class="form-container-input" disabled>
+                <input type="checkbox" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupon?
                 <button type="button" class="form-container-button" onclick="calcularPorcentajes();"> calcular</button>
+                <button type="button" id="buttonCupon" class="form-container-button" onclick="buscaCupon();" disabled> Usar Cupon</button>
             </form>
+            <p id="descuentoObtenido"></p>
             <p id="resultPrecio"></p>
         </div>
     </div>
