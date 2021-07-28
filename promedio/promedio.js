@@ -290,3 +290,19 @@ function checkboxAbleModa() {
     lista2Moda.disabled = !this.checked;
   };
 }
+
+/*obtener moda de otra forma */
+var camilo = [2, 2, 2, 2, 2, 4, 5, 5, 5, 5, 5, 5, 5, 5, 9];
+var listaCount = {};
+var listaArray=[]
+camilo.map(function (elemento) {
+  if (listaCount[elemento]) {
+    listaCount[elemento] += 1;
+  } else {
+    listaCount[elemento] = 1;
+  }
+});
+listaArray=Object.entries(listaCount).sort(function(valorAcumulado,nuevoValor){
+return valorAcumulado[1]-nuevoValor[1]
+})
+
