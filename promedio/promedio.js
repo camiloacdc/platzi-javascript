@@ -3,7 +3,8 @@ var listaMediana=[];
 var listaModa=[];
 function obtenerLista(lista) {
   const cadenaSinEspacios = lista.trim();
-  var arrayCadenas = cadenaSinEspacios.split(",");
+  const cadenasSinLineaslista=cadenaSinEspacios.replace(/(\r\n|\n|\r)/gm, "");
+  var arrayCadenas = cadenasSinLineaslista.split(";");
 
   return arrayCadenas;
 }
@@ -22,6 +23,10 @@ function ejecutarObtenerLista() {
 
 function promedio() {
   var lista = ejecutarObtenerLista();
+  if (isNaN(lista[lista.length-1])){
+    lista.pop();
+    
+  }
   const suma = lista.reduce(function (inicio = 0, siguiente) {
     return inicio + siguiente;
   });
@@ -112,9 +117,14 @@ function ejecutarObtenerListaMediana() {
 
 function ordenarListaSort() {
   var lista = ejecutarObtenerListaMediana();
+  if (isNaN(lista[lista.length-1])){
+    lista.pop();
+    
+  }
   var listaOrdenada = lista.sort(function (a, b) {
     return a - b;
   });
+  console.log(listaOrdenada)
   return listaOrdenada;
 }
 
@@ -122,7 +132,10 @@ function ordenarListafor() {
   var tempVar;
   var listaOrdenada = [];
   var lista = ejecutarObtenerListaMediana();
-
+  if (isNaN(lista[lista.length-1])){
+    lista.pop();
+    
+  }
   for (i = 0; i < lista.length; i++) {
     for (j = i; j < lista.length; j++) {
       if (lista[i] > lista[j]) {
@@ -137,6 +150,7 @@ function ordenarListafor() {
 }
 function calcularMediana(){
   var listaOr=ordenarListaSort()
+  
   var tamano=listaOr.length;
   var mediana;
   var n1,n2;
@@ -211,7 +225,7 @@ alert(mediana) ;
     alert("ingresa un numero");
   }
 
-  return promedio;
+  
 }
 function clearinputMediana() {
   var lista2Mediana = document.getElementById("lista2Mediana");
@@ -226,8 +240,9 @@ function ejecutarObtenerListaMediana() {
   var arrayCadenas = obtenerLista(listaValue);
   var listaFinal = [];
   for (var i = 0; i < arrayCadenas.length; i++) {
-    listaFinal.push(parseInt(arrayCadenas[i]));
+    listaFinal.push(parseFloat(arrayCadenas[i]));
   }
+  
   console.log(listaFinal);
   return listaFinal;
 }
@@ -247,7 +262,10 @@ function ejecutarObtenerListaModa() {
 function calcularModa()
 {
   var lista = ejecutarObtenerListaModa();   
-    // Sort the array
+  if (isNaN(lista[lista.length-1])){
+    lista.pop();
+    
+  }
     lista.sort();
     console.log(lista);  
     // find the max frequency using linear
@@ -305,4 +323,104 @@ camilo.map(function (elemento) {
 listaArray=Object.entries(listaCount).sort(function(valorAcumulado,nuevoValor){
 return valorAcumulado[1]-nuevoValor[1]
 })
+
+function ingresarDatoModa(dato) {
+  listaModa.push(parseInt(dato));
+  return listaModa;
+}
+
+function datosModa() {
+  var lista2Moda = document.getElementById("lista2Moda");
+  var datonuevo = lista2Moda.value;
+  var ingresarDat = ingresarDatoModa(datonuevo);
+  console.log(ingresarDat);
+  clearinputModa();
+  return ingresarDat;
+}
+
+function clearinputModa() {
+  var lista2Moda = document.getElementById("lista2Moda");
+
+  lista2Moda.value = "";
+  lista2Moda.focus();
+}
+function calcularUnoPorUnoModa() {
+  if (listaModa.length > 0) {
+    var listaCount = {};
+    var listaArray = [];
+    listaModa.map(function (elemento) {
+      if (listaCount[elemento]) {
+        listaCount[elemento] += 1;
+      } else {
+        listaCount[elemento] = 1;
+      }
+    });
+    listaArray = Object.entries(listaCount).sort(function (
+      valorAcumulado,
+      nuevoValor
+    ) {
+      return valorAcumulado[1] - nuevoValor[1];
+    });
+  }alert(listaArray[listaArray.length-1][0])
+}
+
+
+/*PROMEDIO PONDERADO */
+
+function obtenerListaPonderado(lista) {
+  const cadenaSinEspacios = lista.trim();
+  const cadenasSinLineaslista=cadenaSinEspacios.replace(/(\r\n|\n|\r)/gm, "");
+  var arrayCadenas = cadenasSinLineaslista.split(";");
+
+  return arrayCadenas;
+}
+
+function ejecutarObtenerListaPonderado() {
+  const lista = document.getElementById("listaPromedioPon");
+  const listaValue = lista.value;
+  var arrayCadenas = obtenerListaPonderado(listaValue);
+  var listaFinal = [];
+  for (var i = 0; i < arrayCadenas.length; i++) {
+    listaFinal.push(arrayCadenas[i]);
+  }
+  if (listaFinal[listaFinal.length-1]===""){
+    listaFinal.pop();
+    
+  }
+  console.log(listaFinal);
+  return listaFinal;
+}
+
+function ejecutarObtenerListaPonderadoFinal() {
+  const listaPonderado =ejecutarObtenerListaPonderado();
+  const nuevalista=[]
+  for(i=0;i<listaPonderado.length;i++){
+    nuevalista.push( listaPonderado[i].split(",") )
+  }
+  
+  
+  console.log( nuevalista)
+  return nuevalista;
+}
+function calcularPonderado(){
+var listaPonderado=ejecutarObtenerListaPonderadoFinal();
+var sumaCreditos=0;
+var pondeTotal=0;
+var sumaMulti=0;
+for (i=0;i<listaPonderado.length;i++){
+  sumaCreditos+=parseFloat(listaPonderado[i][1])
+  
+}
+console.log(sumaCreditos)
+const multi = listaPonderado.map(function (inicio) {
+  return parseFloat(inicio[0]) * parseFloat(inicio[1]);
+});
+
+sumaMulti= multi.reduce(function (inicio = 0, siguiente) {
+  return inicio + siguiente;
+});
+console.log(multi)
+pondeTotal=sumaMulti/sumaCreditos
+console.log(pondeTotal)
+}
 
