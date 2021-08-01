@@ -1,6 +1,7 @@
 var lista = [];
 var listaMediana=[];
 var listaModa=[];
+var listaPromedioPon=[];
 function obtenerLista(lista) {
   const cadenaSinEspacios = lista.trim();
   const cadenasSinLineaslista=cadenaSinEspacios.replace(/(\r\n|\n|\r)/gm, "");
@@ -96,10 +97,14 @@ function checkboxAble() {
   var buttonInUnoAuno = document.getElementById("buttonInUnoAuno");
   var checkboxUnoPoruno = document.getElementById("checkboxUnoPoruno");
   var lista2 = document.getElementById("lista2");
+  var listaPromedio=document.getElementById("listaPromedio");
+  var buttonPromedio=document.getElementById("buttonPromedio");
   checkboxUnoPoruno.onchange = function () {
     buttonInUnoAuno.disabled = !this.checked;
     buttonCalcInUnoAuno.disabled = !this.checked;
     lista2.disabled = !this.checked;
+    listaPromedio.disabled=this.checked;
+    buttonPromedio.disabled=this.checked;
   };
 }
 
@@ -179,10 +184,14 @@ function checkboxAbleMediana() {
   var buttonInUnoAunoMediana = document.getElementById("buttonInUnoAunoMediana");
   var checkboxUnoPorunoMediana = document.getElementById("checkboxUnoPorunoMediana");
   var lista2Mediana = document.getElementById("lista2Mediana");
+  var buttonCalcularMediana=document.getElementById("buttonCalcularMediana");
+  var listaMediana=document.getElementById("listaMediana");
   checkboxUnoPorunoMediana.onchange = function () {
     buttonInUnoAunoMediana.disabled = !this.checked;
     buttonCalcInUnoAunoMediana.disabled = !this.checked;
     lista2Mediana.disabled = !this.checked;
+    buttonCalcularMediana.disabled = this.checked;
+    listaMediana.disabled= this.checked;
   };
 }
 
@@ -302,10 +311,14 @@ function checkboxAbleModa() {
   var buttonInUnoAunoModa = document.getElementById("buttonInUnoAunoModa");
   var checkboxUnoPorunoModa = document.getElementById("checkboxUnoPorunoModa");
   var lista2Moda = document.getElementById("lista2Moda");
+  var listaModa =document.getElementById("listaModa");
+  var buttonCalcularModa=document.getElementById("buttonCalcularModa");
   checkboxUnoPorunoModa.onchange = function () {
     buttonInUnoAunoModa.disabled = !this.checked;
     buttonCalcInUnoAunoModa.disabled = !this.checked;
     lista2Moda.disabled = !this.checked;
+    listaModa.disabled = this.checked;
+    buttonCalcularModa.disabled = this.checked;
   };
 }
 
@@ -422,5 +435,75 @@ sumaMulti= multi.reduce(function (inicio = 0, siguiente) {
 console.log(multi)
 pondeTotal=sumaMulti/sumaCreditos
 console.log(pondeTotal)
+}
+/**uno por uno ponderado */
+function checkboxAblePromedioPon() {
+  var buttonCalcInUnoAunoPromedioPon = document.getElementById("buttonCalcInUnoAunoPromedioPon");
+  var buttonInUnoAunoPromedioPon = document.getElementById("buttonInUnoAunoPromedioPon");
+  var checkboxUnoPorunoPromedioPon = document.getElementById("checkboxUnoPorunoPromedioPon");
+  var lista2PromedioPon = document.getElementById("lista2PromedioPon");
+  var lista3PromedioPon = document.getElementById("lista3PromedioPon");
+  var listaPromedioPon =document.getElementById("listaPromedioPon");
+  var buttonCalPond=document.getElementById("buttonCalPond");
+  checkboxUnoPorunoPromedioPon.onchange = function () {
+    buttonInUnoAunoPromedioPon.disabled = !this.checked;
+    buttonCalcInUnoAunoPromedioPon .disabled = !this.checked;
+    lista2PromedioPon.disabled = !this.checked;
+    lista3PromedioPon.disabled = !this.checked;
+    listaPromedioPon.disabled=this.checked;
+    buttonCalPond.disabled=this.checked;
+  };
+}
+
+function clearTextareaPromedioPon(){
+  var listaPromedioPon = document.getElementById("listaPromedioPon");
+  
+  listaPromedioPon.innerHTML = "";
+}
+
+function clearinputPromedioPon() {
+  var lista2PromedioPon = document.getElementById("lista2PromedioPon");
+  var lista3PromedioPon = document.getElementById("lista3PromedioPon");
+
+  lista2PromedioPon.value = "";
+  lista3PromedioPon.value = "";
+  lista2PromedioPon.focus();
+}
+
+function datosPromedioPon() {
+  var lista2PromedioPon = document.getElementById("lista2PromedioPon");
+  var lista3PromedioPon = document.getElementById("lista3PromedioPon");
+  var value1 = parseFloat(lista2PromedioPon.value);
+  var value2 = parseFloat(lista3PromedioPon.value);
+  var tempData = [];
+  var sumaArriba = 0;
+  var sumaCreditos = 0;
+  var totalPonderado=0;
+  if (lista2PromedioPon.value === "" || lista3PromedioPon.value === "") {
+    alert("ingresa un numero");
+  } else {
+    listaPromedioPon.push({ value1, value2 });
+
+    for (var i = 0; i < listaPromedioPon.length; i++) {
+      algo = listaPromedioPon[i].value1 * listaPromedioPon[i].value2;
+      tempData.push(algo);
+    }
+    for (var i = 0; i < tempData.length; i++) {
+      sumaArriba += parseFloat(tempData[i]);
+    }
+    for (var i = 0; i < listaPromedioPon.length; i++) {
+      sumaCreditos += listaPromedioPon[i].value2;
+    }
+
+    totalPonderado=sumaArriba/sumaCreditos
+  }
+
+  clearinputPromedioPon();
+  console.log(totalPonderado);
+  // console.log(listaPromedioPon);
+  console.log(sumaCreditos);
+  // console.log(tempData);
+  console.log(sumaArriba);
+  return listaPromedioPon;
 }
 
