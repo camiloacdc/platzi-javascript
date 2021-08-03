@@ -130,3 +130,53 @@ body{
      font-family: 'Zen Loop', cursive;
      
 }
+/* desde aqui*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); 
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+.body-index { display: flex;  justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; margin-top: -100px;}
+.body-index > ul { position: absolute; } 
+.body-index > ul li { list-style: none; text-align: center; } 
+.body-index > ul li a { color: #333; text-decoration: none; font-size: 3em; padding: 5px 20px; display: inline-flex; font-weight: 700; transition: 0.5s; } 
+.body-index > ul:hover li a { color: #0002; } 
+.body-index > ul li:hover a { color: #000; background: rgba(255,255,255,1); } 
+.body-index > ul li a:before { content: ''; position: absolute; top: 50%; left: 40%; transform: translate(-50%,-50%); display: flex; justify-content: center; align-items: center; font-size: 3.5em; color: rgba(0,0,0,.1); border-radius: 20%; z-index: -1; opacity: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 500px; transition: letter-spacing 0.5s,left 0.5s; } 
+.body-index > ul li a:hover:before { content: attr(data-text); opacity: 1; left: 50%; letter-spacing: 5px; width: 1400px; height: 600px; } 
+.body-index > ul li:nth-child(6n+1) a:before { background: #81ecec; }
+.body-index >  ul li:nth-child(6n+2) a:before { background: #ff7675; } 
+.body-index > ul li:nth-child(6n+3) a:before { background: #55efc4; } 
+.body-index > ul li:nth-child(6n+4) a:before { background: #a29bfe; } 
+.body-index > ul li:nth-child(6n+5) a:before { background: #fd79a8; } 
+.body-index >  ul li:nth-child(6n+6) a:before { background: #ffeaa7; }
+.header-index > h1{
+     margin-top: 25px;
+text-align: center;
+}
+.footer{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     font: 2em;
+     font-weight: bold;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); 
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+.horizontal-menu { display: flex;  justify-content: center; align-items: center; min-height: 40vh; overflow: hidden; margin-top: -100px;}
+.horizontal-menu > ul { position: absolute; display: flex;} 
+.horizontal-menu > ul li { list-style: none; text-align: center; } 
+.horizontal-menu > ul li a { color: #333; text-decoration: none; font-size: 1.5em; padding: 5px 20px; display: inline-flex; font-weight: 700; transition: 0.5s; } 
+.horizontal-menu > ul:hover li a { color: #0002; } 
+.horizontal-menu > ul li:hover a { color: #000; background: rgba(255,255,255,1); } 
+.horizontal-menu > ul li a:before { content: ''; position: absolute; top: 210%; left: 40%; transform: translate(-50%,-50%); display: flex; justify-content: center; align-items: center; font-size: 4em; color: rgba(0,0,0,.1); border-radius: 20%; z-index: -1; opacity: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 600px; transition: letter-spacing 0.5s,left 0.5s; } 
+.horizontal-menu > ul li a:hover:before { content: attr(data-text); opacity: 1; left: 50%; letter-spacing: 5px; width: 1400px; height: 170px; } 
+.horizontal-menu > ul li:nth-child(6n+1) a:before { background: #81ecec; }
+.horizontal-menu >  ul li:nth-child(6n+2) a:before { background: #ff7675; } 
+.horizontal-menu > ul li:nth-child(6n+3) a:before { background: #55efc4; } 
+.horizontal-menu > ul li:nth-child(6n+4) a:before { background: #a29bfe; } 
+.horizontal-menu > ul li:nth-child(6n+5) a:before { background: #fd79a8; } 
+.horizontal-menu >  ul li:nth-child(6n+6) a:before { background: #ffeaa7; }
+.header-index > h1{
+     margin-top: 25px;
+text-align: center;
+}
+
