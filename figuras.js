@@ -4,12 +4,12 @@ function mostrar(algo){
 //codigo cuadrado
 
     function areaCuadrado(lado){
-              area=lado*lado
+              area=parseFloat(lado)*parseFloat(lado)
               if(isNaN(area)){alert("ingresa un numero")}else{
               return area;}
     }
     function perimetroCuadrado(lado){
-        perimetro=lado*4
+        perimetro=parseFloat(lado)*4
         if(isNaN(perimetro)){alert("ingresa un numero")}else{
         return perimetro;}
 }
@@ -17,13 +17,13 @@ function mostrar(algo){
 //codigo triangulo
 console.group("triangulos")
 function perimetroTriangulo(lado1,lado2,lado3){
-    perimetro=parseInt(lado1)+parseInt(lado2)+parseInt(lado3)
+    perimetro=parseFloat(lado1)+parseFloat(lado2)+parseFloat(lado3)
 
     if(isNaN(perimetro)){alert("ingresa un numero")}else{
         return perimetro;}
 }
 function areaTriangulo(base,altura){
-    area=(base*altura)/2;
+    area=(parseFloat(base)*parseFloat(altura))/2;
 
     if(isNaN(area)){alert("ingresa un numero")}else{
         return area;}
@@ -32,21 +32,22 @@ function areaTriangulo(base,altura){
 
 function diametroCirculo(radio){
     diametro=radio*2;
-    if(isNaN(diametro)){
-        alert("ingresa un numero")
-    }else{
     
-    return diametro;}
+    
+    return diametro;
 }
 
 function perimetroCirculo(radio){
-    diametro= diametroCirculo(radio);
+    diametro= diametroCirculo(parseFloat(radio));
     perimetro=(diametro* Math.PI).toFixed(2);
-    return perimetro;
+    if(isNaN(perimetro)){alert("ingresa un numero")}else{
+        return perimetro;
+       }
+   
 }
 
 function areaCirculo(radio){
-    area=(radio*radio*Math.PI).toFixed(2);
+    area=(parseFloat(radio)*parseFloat(radio)*Math.PI).toFixed(2);
 
     if(isNaN(area)){alert("ingresa un numero")}else{
         return area;
@@ -56,28 +57,63 @@ function areaCirculo(radio){
 //lamados html
 function calcularAreaCuadrado(){
     const lado=document.getElementById("lado")
+    const resultadoCuadrado=document.getElementById("resultado-cuadrado")
     const value=lado.value;
     const area=areaCuadrado(value);
-    alert("el área del cuadrado es:"+area+" "+"cm2");
+    if(area!=undefined){
+        resultadoCuadrado.innerHTML="El area del cuadrado es: "+area+" "+"m2 para un lado de " + value;}
+        clearCuadrado(); 
+        
 }
 function calcularPerimetroCuadrado(){
     const lado=document.getElementById("lado")
+    const resultadoCuadrado=document.getElementById("resultado-cuadrado")
     const value=lado.value;
     const perimetro=perimetroCuadrado(value);
-    alert("el perimetro del cuadrado es:"+perimetro+" "+"cm2");
+    if(perimetro!=undefined){
+        resultadoCuadrado.innerHTML="El perimetro del cuadrado es: "+perimetro+" "+" m2 para un lado de "+ value;}
+        clearCuadrado(); 
+        
+}
+
+function clearCuadrado(){
+    var lado=document.getElementById("lado")
+    
+    lado.value="";
+    lado.focus();
+    setTimeout(function(){
+        window.location.reload(1);
+     }, 5000);
 }
 function calcularAreaCirculo(){
     const radio=document.getElementById("radio")
+    const resultadoCirculo=document.getElementById("resultado-circulo")
     const value=radio.value;
     const area=areaCirculo(value);
-    alert("el area del circulo es : "+area+" "+"cm2");
+    if(area!=undefined){
+    resultadoCirculo.innerHTML="El area del circulo es : "+area+" "+"m2 para un radio de "+ value; }
+    clearCirculo();
+    
 }
 function calcularPerimetroCirculo(){
     const lado=document.getElementById("radio")
+    const resultadoCirculo=document.getElementById("resultado-circulo")
     const value=lado.value;
     const perimetro=perimetroCirculo(value);
+    if(perimetro!=undefined){
+    resultadoCirculo.innerHTML="El perimetro del circulo es : "+perimetro+" "+" m2 para un radio de "+ value ;
+    }
+    clearCirculo();
     
-    alert("el perimetro del circulo es:"+perimetro+" "+"cm2");
+}
+function clearCirculo(){
+    var radio=document.getElementById("radio")
+    
+    radio.value="";
+    radio.focus()
+    setTimeout(function(){
+        window.location.reload(1);
+     }, 5000);
 }
 function calcularAreaTriangulo(){
     const base=document.getElementById("base");
@@ -85,17 +121,51 @@ function calcularAreaTriangulo(){
     const altura=document.getElementById("altura");
     const valueAltura=altura.value;
     const area=areaTriangulo(valueBase,valueAltura);
-    alert("el perimetro del triángulo es:"+area+" "+"cm");
+    if(area!=undefined){
+    resultado.innerHTML="El área del triángulo es: "+area+" "+"cm con un base de "+valueBase+" y una altura de "+valueAltura;}
+    clearTrianguloBase()
+    setTimeout(function(){
+        window.location.reload(1);
+     }, 5000);
+    
 }
 function calcularPerimetroTriangulo(){
     const lado1=document.getElementById("lado1")
     const valueL1=lado1.value;
     const lado2=document.getElementById("lado2")
     const valueL2=lado2.value;
-    const base=document.getElementById("base")
+    const base=document.getElementById("lado3")
     const valueBase=base.value;
-    const perimetro=perimetroTriangulo(valueL1,valueL2,valueBase);
-    alert("el perimetro del triángulo es:"+perimetro+" "+"cm");
+    const resultado=document.getElementById("resultado")
+    const perimetro1=perimetroTriangulo(valueL1,valueL2,valueBase);
+    if (perimetro1!=undefined){
+    resultado.innerHTML="El perimetro del triángulo es: "+perimetro1+" "+"cm con medidas de "+valueL1+", "+valueL2+", "+valueBase;}
+    clearTrianguloPer()
+    
+}
+function clearTrianguloPer(){
+    var lado1=document.getElementById("lado1")
+    var lado2=document.getElementById("lado2")
+    var lado3=document.getElementById("lado3")
+    
+    lado1.value="";
+    lado2.value="";
+    lado3.value="";
+    lado1.focus()
+    setTimeout(function(){
+        window.location.reload(1);
+     }, 5000);
+}
+function clearTrianguloBase(){
+    var lado1=document.getElementById("base")
+    var lado2=document.getElementById("altura")
+       
+    lado1.value="";
+    lado2.value="";
+    lado1.focus()
+    setTimeout(function(){
+        window.location.reload(1);
+     }, 5000);
 }
 //Calcular altura triangulo isósceles
 

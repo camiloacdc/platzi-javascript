@@ -14,6 +14,7 @@ flex-direction: row;
 justify-content: space-around;
 flex: 1;
 }
+
 .container-cuadrado{
      border-radius: 20px;
      border:1px solid black;     
@@ -25,6 +26,10 @@ flex: 1;
      flex-direction: column;
      align-items: stretch;
      justify-content:space-evenly;
+}
+.container-cuadrado:hover{
+     border: 1px solid #14ffe9;
+     background: #DBFF33 ;
 }
 .container-form{
      
@@ -45,6 +50,10 @@ flex: 1;
      align-items: stretch;
      justify-content: space-evenly;
 }
+.container-circulo:hover{
+     border: 1px solid #14ffe9;
+     background: #ff7675;
+}
 .container-triangulo{
      border-radius: 20px;
      border:1px solid black;  
@@ -57,6 +66,10 @@ flex: 1;
      align-items: stretch;
      justify-content: space-around;
 }
+.container-triangulo:hover{
+     border: 1px solid #14ffe9;
+     background: #DAF7A6;
+}
 .container-circulo>h2,.container-cuadrado>h2{
      font-family: 'Zen Loop', cursive;
      display: block;
@@ -64,6 +77,7 @@ flex: 1;
      padding-left: 5px;
 }
 .container-triangulo>h2{
+     font-family: 'Zen Loop', cursive;
      display: block;
      margin-top: -10px;
      padding-left: 5px;
@@ -72,7 +86,7 @@ flex: 1;
      font-weight: bolder;
      color: black;
      font-size: 20px;
-     margin-top:-100px;
+    
      padding-left: 8px;
 }
 .container-input{
@@ -179,4 +193,8 @@ text-align: center;
      margin-top: 25px;
 text-align: center;
 }
-
+.resultado,.resultado-circulo,.resultado-cuadrado{
+     padding-left: 10px;
+     font-weight: bold;
+     font-size: 20px;
+}
