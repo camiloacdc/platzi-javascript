@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto salarios</title>
+    <link rel="stylesheet" href="proyecto-salarios.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="title">
+            <h1> Proyecto Final curso Práctico de Javacript Platzi</h1>
+        </div>
+    </header>
+    <div class="main">
+        <div class="contianer-form">
+            <form action="">
+                <label for="pais">ingresa el pais ( solo Colombia, Mexico ó Argentina)</label>
+                <input type="text" id="pais" name="pais">
+                <label for="nombre">ingresa el nombre de la persona</label>
+                <input type="text" id="nombre" name="nombre">
+                <label for="salario">ingresa el salario</label>
+                <input type="number" name="salario" id="salario">
+                <button type="button" id="buttonIngresarPersona" onclick="ingresarDato();">ingresar persona</button>
+                <button type="button" id="calcularPromedioGeneral" onclick="ordenarSalarios();">Promedio salario total</button>
+                <button type="button" id="calcularPromedioDiez" onclick="medianaTop();">Promedio 10% de la población</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+
+</body>
+<script src="proyecto-salarios.js"></script>
+</html>
