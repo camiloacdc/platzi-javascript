@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porcentajes</title>
+    <title>Document</title>
     <link rel="stylesheet" href="porcentajes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-<header>
-    <div class="container-titulo">
-        <h1>calculadora de precio con descuento</h1>
+    <header class="header">
+
+        <h1>Calculadora de precio con descuento</h1>
+
+        <p> Este es el segundo taller del curso practico de javascript</p>
+    </header>
+
+    <div class="horizontal-menu">
+        <ul>
+            <li><a href="../index.html" data-text="Inicio">Inicio</a></li>
+            <li><a href="../figuras.html" data-text="Taller figuras">Taller figuras</a></li>
+            <li><a href="../porcentajes-descuento/porcentajes.html" data-text="Taller descuentos">Taller descuentos</a>
+            </li>
+            <li><a href="../promedio/promedio.html" data-text="Taller Promedio">Taller Promedio</a></li>
+            <li><a href="#" data-text="Proyecto">Proyecto</a></li>
+
+        </ul>
     </div>
-    <p> Este es el segundo taller del curso practico de javascript</p>
-</header>
     <div class="main">
-        
-        <div class="form-container">
-            <form action="">
+        <div class="container">
+
+            <form action="" class="container-form">
                 <label for="precio"> Escribe el precio del producto</label>
                 <input type="number" name="precio" id="precio" class="form-container-input">
                 <label for="descuento"> Escribe el descuento del producto</label>
                 <input type="number" name="descuento" id="descuento" class="form-container-input">
-                <label for="textDescuento"> ingresa cupon</label>
-                <input type="text" name="textDescuento" id="textDescuento" class="form-container-input" disabled>
-                <input type="checkbox" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupon?
-                <button type="button" class="form-container-button" onclick="calcularPorcentajes();"> calcular</button>
-                <button type="button" id="buttonCupon" class="form-container-button" onclick="buscaCupon();" disabled> Usar Cupon</button>
+                <button type="button" class="form-container-button" onclick="calcularPorcentajes();">
+                    calcular</button>
+                <section class="container-form-cupon">
+                    <input type="checkbox" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupon?</br>
+                </section>
+                    <label for="textDescuento"> ingresa cupon</label>
+                    <input type="text" name="textDescuento" id="textDescuento" class="form-container-input" disabled>
+                    <button type="button" id="buttonCupon" class="form-container-button" onclick="buscaCupon();"
+                        disabled>
+                        Usar Cupon</button>
+                
+
+
             </form>
             <p id="descuentoObtenido"></p>
             <p id="resultPrecio"></p>
+
         </div>
     </div>
     <script src="porcentajes.js"></script>
 </body>
+
 </html>

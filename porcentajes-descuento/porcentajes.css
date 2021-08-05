@@ -1,0 +1,66 @@
+body{
+     font-family: 'Zen Loop', cursive;
+     
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); 
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+.horizontal-menu { display: flex;  justify-content: center; align-items: center; min-height: 40vh; overflow: hidden; margin-top: -100px;}
+.horizontal-menu > ul { position: absolute; display: flex;} 
+.horizontal-menu > ul li { list-style: none; text-align: center; } 
+.horizontal-menu > ul li a { color: #333; text-decoration: none; font-size: 1.5em; padding: 5px 20px; display: inline-flex; font-weight: 700; transition: 0.5s; } 
+.horizontal-menu > ul:hover li a { color: #0002; } 
+.horizontal-menu > ul li:hover a { color: #000; background: rgba(255,255,255,1); } 
+.horizontal-menu > ul li a:before { content: ''; position: absolute; top: 210%; left: 40%; transform: translate(-50%,-50%); display: flex; justify-content: center; align-items: center; font-size: 4em; color: rgba(0,0,0,.1); border-radius: 20%; z-index: -1; opacity: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 600px; transition: letter-spacing 0.5s,left 0.5s; } 
+.horizontal-menu > ul li a:hover:before { content: attr(data-text); opacity: 1; left: 50%; letter-spacing: 5px; width: 1400px; height: 170px; } 
+.horizontal-menu > ul li:nth-child(6n+1) a:before { background: #81ecec; }
+.horizontal-menu >  ul li:nth-child(6n+2) a:before { background: #ff7675; } 
+.horizontal-menu > ul li:nth-child(6n+3) a:before { background: #55efc4; } 
+.horizontal-menu > ul li:nth-child(6n+4) a:before { background: #a29bfe; } 
+.horizontal-menu > ul li:nth-child(6n+5) a:before { background: #fd79a8; } 
+.horizontal-menu >  ul li:nth-child(6n+6) a:before { background: #ffeaa7; }
+.header{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header > h1{
+     margin-top: 25px;
+text-align: center;
+}
+.header > p{
+     font-size: 20px;
+     
+     }
+.resultado,.resultado-circulo,.resultado-cuadrado{
+     padding-left: 10px;
+     font-weight: bold;
+     font-size: 20px;
+}
+.main{
+     display: flex;
+     align-items: center;
+     justify-content: center;   
+}
+.container{
+     display: flex;
+     border-radius: 20px;
+     justify-content: center;
+     border:1px solid black;
+     min-height: 400px;
+     width: 400px;
+     font-family: 'Zen Loop', cursive;
+}
+.container-form{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+     font-family: 'Zen Loop', cursive;
+}
+.container-form-cupon{  display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Zen Loop', cursive;}
