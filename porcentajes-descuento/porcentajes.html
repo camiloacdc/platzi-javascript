@@ -36,28 +36,36 @@
 
             <form action="" class="container-form">
                 <label for="precio"> Escribe el precio del producto</label>
-                <input type="number" name="precio" id="precio" class="form-container-input">
+                <input type="number" name="precio" id="precio" class="form-container-input" placeholder="Precio">
                 <label for="descuento"> Escribe el descuento del producto</label>
-                <input type="number" name="descuento" id="descuento" class="form-container-input">
-                <button type="button" class="form-container-button" onclick="calcularPorcentajes();">
-                    calcular</button>
+                <input type="number" name="descuento" id="descuento" class="form-container-input" placeholder="Descuento">
+                <button type="button" id="btnClc" class="form-container-button" onclick="calcularPorcentajes();">
+                   Calcular</button>
                 <section class="container-form-cupon">
-                    <input type="checkbox" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupon?</br>
+                    <input type="checkbox" class="descS" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupon?</br>
                 </section>
                     <label for="textDescuento"> ingresa cupon</label>
-                    <input type="text" name="textDescuento" id="textDescuento" class="form-container-input" disabled>
+                    <input type="text" name="textDescuento" id="textDescuento" placeholder="Cupon" class="form-container-input" disabled >
                     <button type="button" id="buttonCupon" class="form-container-button" onclick="buscaCupon();"
                         disabled>
                         Usar Cupon</button>
                 
-
+                        <div class="resultadoDes">
+                            <p id="descuentoObtenido"></p>
+                            <p id="resultPrecio"></p>
+                        </div>
 
             </form>
-            <p id="descuentoObtenido"></p>
-            <p id="resultPrecio"></p>
-
+            
+        
         </div>
+        
     </div>
+    <footer class="footer">
+        <p class="footer-text">Camilo Cubides</p>
+        <p class="footer-text">Copyright</p>
+        <p class="footer-text">Javascript Platzi</p>
+        </footer>
     <script src="porcentajes.js"></script>
 </body>
 

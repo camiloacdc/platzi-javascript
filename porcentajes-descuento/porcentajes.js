@@ -32,22 +32,35 @@ const descuentoValue=descuento.value;
 
 const total=(Pordescuento(precioValue,descuentoValue)).toFixed(2)
 resultPrecio.innerText="el precio con descuento es "+ total
-
+setTimeout(function(){
+    window.location.reload(1);
+ }, 5000);
 }
 function checkboxAble(){
     var tieneDescuento = document.getElementById("tieneDescuento");
     var buttonCupon=document.getElementById("buttonCupon");
     var textDescuento = document.getElementById("textDescuento");
+    var btnClc=document.getElementById("btnClc");
+    var descuento=document.getElementById("descuento")
     tieneDescuento.onchange= function() {
         textDescuento.disabled = !this.checked;
         buttonCupon.disabled= !this.checked;
+        btnClc.disabled=this.checked;
+        descuento.disabled=this.checked;
     };
 }
  
 function muestraDescuento(descuento){
 const descuentoObtenido=document.getElementById("descuentoObtenido")
+const resultPrecio=document.getElementById("resultPrecio")
+const precio=document.getElementById("precio");
+const precioValue=precio.value;
 descuentoObtenido.innerHTML="obtuviste un descuento de "+descuento+" %"
-
+const total=(Pordescuento(precioValue,descuento)).toFixed(2)
+resultPrecio.innerText="el precio con descuento es "+ total;
+setTimeout(function(){
+    window.location.reload(1);
+ }, 5000);
 }
 function inputDescuento(descuento){
 const descuentoObtenido=document.getElementById("descuento")
