@@ -32,25 +32,35 @@
         </ul>
     </div>
     <div class="main">
+        <div class="cupones-disponibles">
+            <p>Estos son los cupones diponibles</p><br>
+            <p class="cupon1 "id ="cupon1"></p>
+            <p class="descue1" id ="descue1"></p>
+            <p class="cupon2" id ="cupon2"></p>
+            <p class="descue2" id ="descue2"></p>
+            <p class="cupon3" id="cupon3"></p>
+            <p class="descue3" id="descue3"></p>
+        </div>
         <div class="container">
 
             <form action="" class="container-form">
                 <label for="precio"> Escribe el precio del producto</label>
                 <input type="number" name="precio" id="precio" class="form-container-input" placeholder="Precio">
-                <label for="descuento"> Escribe el descuento del producto</label>
+                <label id="labelDescuento" for="descuento"> Escribe el descuento del producto</label>
                 <input type="number" name="descuento" id="descuento" class="form-container-input" placeholder="Descuento">
                 <button type="button" id="btnClc" class="form-container-button" onclick="calcularPorcentajes();">
                    Calcular</button>
                 <section class="container-form-cupon">
-                    <input type="checkbox" class="descS" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupon?</br>
+                    <input type="checkbox" class="descS" name="tieneDescuento" id="tieneDescuento" onclick="checkboxAble()">Tienes un cupón?</br>
                 </section>
-                    <label for="textDescuento"> ingresa cupon</label>
+                    <label for="textDescuento"> Ingresa cupón</label>
                     <input type="text" name="textDescuento" id="textDescuento" placeholder="Cupon" class="form-container-input" disabled >
                     <button type="button" id="buttonCupon" class="form-container-button" onclick="buscaCupon();"
                         disabled>
-                        Usar Cupon</button>
+                        Usar Cupón</button>
                 
-                        <div class="resultadoDes">
+                        <div class="resultadoDes" id="resultadoDes">
+                           
                             <p id="descuentoObtenido"></p>
                             <p id="resultPrecio"></p>
                         </div>

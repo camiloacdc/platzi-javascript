@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,71 +8,125 @@
     <title>Promedio, moda, mediana</title>
     <link rel="stylesheet" href="promedio.css">
 </head>
-<header>
-    <h1>promedio, mediana, moda</h1>
+<header class="header">
+    <h1>Promedio, Mediana, Moda</h1>
+    <p> Este es el tercer taller del curso practico de javascript</p>
 </header>
+
+<div class="horizontal-menu">
+    <ul>
+        <li><a href="../index.html" data-text="Inicio">Inicio</a></li>
+        <li><a href="../figuras.html" data-text="Taller figuras">Taller figuras</a></li>
+        <li><a href="../porcentajes-descuento/porcentajes.html" data-text="Taller descuentos">Taller descuentos</a>
+        </li>
+        <li><a href="../promedio/promedio.html" data-text="Taller Promedio">Taller Promedio</a></li>
+        <li><a href="#" data-text="Proyecto">Proyecto</a></li>
+
+    </ul>
+</div>
 <div class="main">
-    <h2> Promedio</h2>
-    <div class="container-form">
-        <form action="">
-            <label for="lista">Ingrese la lista separa por comas...</label>
-            <textarea name="lista" id="listaPromedio" onfocus="clearTextareaPromedio();" cols="30" rows="10">  Ingrese la lista separada por comas... </textarea>
-            <label for="lista2"> ingrese uno por uno los elementos de la lista</label>
-            <input type="checkbox" name="checkboxUnoPoruno" id="checkboxUnoPoruno" onclick="checkboxAble()">
-            <input type="number" id="lista2" disabled>
-            <button type="button" onclick="promedio();" id="buttonPromedio">lista</button>
-            <button type="button" onclick="datos();" id="buttonInUnoAuno" disabled>uno por uno </button>
-            <button type="button" onclick="calcularUnoPorUno();" id="buttonCalcInUnoAuno" disabled>calcular </button>
-        </form>
+    <div class="container-line1">
+        <div class="container-promedio">
+
+
+            <form action="" class="container-form">
+                <h2> Promedio</h2>
+                <label for="lista">Ingrese la lista separa por comas...</label>
+                <textarea name="lista" id="listaPromedio" onfocus="clearTextareaPromedio();" cols="30"
+                    rows="10">  Ingrese la lista separada por comas... </textarea>
+                    <section class="container-form-cupon">
+                    <label for="lista2"> ingrese uno por uno los elementos de la lista</label>
+                
+                    <input class="uno-por-uno" type="checkbox" name="checkboxUnoPoruno" id="checkboxUnoPoruno" onclick="checkboxAble()">
+                </section>
+                <input class="form-container-input" type="number" id="lista2" disabled>
+                <button class="form-container-button" type="button" onclick="promedio();"
+                    id="buttonPromedio">lista</button>
+                <button class="form-container-button" type="button" onclick="datos();" id="buttonInUnoAuno" disabled>uno
+                    por uno </button>
+                <button class="form-container-button" type="button" onclick="calcularUnoPorUno();"
+                    id="buttonCalcInUnoAuno" disabled>calcular </button>
+            </form>
+
+        </div>
+        <div class="container-promediopon">
+
+
+            <form action="" class="container-form">
+                <h2> Promedio ponderado</h2>
+                <label for="lista">Ingrese la lista separa por comas...</label>
+                <textarea name="listaPromedioPon" id="listaPromedioPon" onfocus="clearTextareaPromedioPon();" cols="30"
+                    rows="10"> Ingrese la lista separada por comas... </textarea>
+                    <section class="container-form-cupon">
+                    <label for="lista2PromedioPon"> ingrese uno por uno los elementos de la lista</label>
+                
+                <input class="uno-por-uno" type="checkbox" name="checkboxUnoPorunoPromedioPon" id="checkboxUnoPorunoPromedioPon"
+                    onclick="checkboxAblePromedioPon()">
+                </section>
+                <input class="form-container-input" type="number" id="lista2PromedioPon" disabled>
+                <input class="form-container-input" type="number" id="lista3PromedioPon" disabled>
+                <button class="form-container-button" type="button" id="buttonCalPond" onclick="calcularPonderado();" id="">lista</button>
+                <button class="form-container-button" type="button" onclick="datosPromedioPon();"
+                    id="buttonInUnoAunoPromedioPon" disabled>uno por uno </button>
+                <button class="form-container-button" type="button" onclick="calcularUnoPorUnoPromedioPon();"
+                    id="buttonCalcInUnoAunoPromedioPon" disabled>calcular </button>
+            </form>
+
+        </div>
     </div>
+    <div class="container-line2">
+        <div class="container-mediana">
 
 
-    <div class="container-form">
-        <h2> Mediana</h2>
-        <form action="">
-            <label for="listaMediana">Ingrese la lista separa por comas...</label>
-            <textarea name="listaMediana" id="listaMediana" onfocus="clearTextareaMediana();" cols="30" rows="10">  Ingrese la lista separada por comas... </textarea>
-            <label for="lista2Mediana"> ingrese uno por uno los elementos de la lista</label>
-            <input type="checkbox" name="checkboxUnoPorunoMediana" id="checkboxUnoPorunoMediana" onclick="checkboxAbleMediana();">
-            <input type="number" id="lista2Mediana" disabled>
-            <button type="button" onclick="calcularMediana();" id="buttonCalcularMediana">lista</button>
-            <button type="button" onclick="datosMediana();" id="buttonInUnoAunoMediana" disabled>uno por uno </button>
-            <button type="button" onclick="calcularUnoPorUnoMediana();" id="buttonCalcInUnoAunoMediana" disabled>calcular </button>
-        </form>
-    </div>
+            <form action="" class="container-form">
+                <h2> Mediana</h2>
+                <label for="listaMediana">Ingrese la lista separa por comas...</label>
+                <textarea name="listaMediana" id="listaMediana" onfocus="clearTextareaMediana();" cols="30"
+                    rows="10">  Ingrese la lista separada por comas... </textarea>
+                    <section class="container-form-cupon">
+                    <label for="lista2Mediana"> ingrese uno por uno los elementos de la lista</label>
+                <input class="uno-por-uno" type="checkbox" name="checkboxUnoPorunoMediana" id="checkboxUnoPorunoMediana"
+                    onclick="checkboxAbleMediana();">
+                    </section>
+                <input class="form-container-input" type="number" id="lista2Mediana" disabled>
+                <button class="form-container-button" type="button" onclick="calcularMediana();"
+                    id="buttonCalcularMediana">lista</button>
+                <button class="form-container-button" type="button" onclick="datosMediana();"
+                    id="buttonInUnoAunoMediana" disabled>uno por uno </button>
+                <button class="form-container-button" type="button" onclick="calcularUnoPorUnoMediana();"
+                    id="buttonCalcInUnoAunoMediana" disabled>calcular </button>
+            </form>
 
-    <div class="container-form">
-        <h2> Moda</h2>
-        <form action="">
-            <label for="lista">Ingrese la lista separa por comas...</label>
-            <textarea name="listaModa" id="listaModa" onfocus="clearTextareaModa();" cols="30" rows="10"> Ingrese la lista separada por comas... </textarea>
-            <label for="lista2Moda"> ingrese uno por uno los elementos de la lista</label>
-            <input type="checkbox" name="checkboxUnoPorunoModa" id="checkboxUnoPorunoModa" onclick="checkboxAbleModa()">
-            <input type="number" id="lista2Moda" disabled>
-            <button type="button" onclick="calcularModa();" id="buttonCalcularModa">lista</button>
-            <button type="button" onclick="datosModa();" id="buttonInUnoAunoModa" disabled>uno por uno </button>
-            <button type="button" onclick="calcularUnoPorUnoModa();" id="buttonCalcInUnoAunoModa" disabled>calcular </button>
-        </form>
-    </div>
+        </div>
+        <div class="container-moda">
 
-    <div class="container-form">
-        <h2> Promedio ponderado</h2>
-        <form action="">
-            <label for="lista">Ingrese la lista separa por comas...</label>
-            <textarea name="listaPromedioPon" id="listaPromedioPon" onfocus="clearTextareaPromedioPon();" cols="30" rows="10"> Ingrese la lista separada por comas... </textarea>
-            <label for="lista2PromedioPon"> ingrese uno por uno los elementos de la lista</label>
-            <input type="checkbox" name="checkboxUnoPorunoPromedioPon" id="checkboxUnoPorunoPromedioPon" onclick="checkboxAblePromedioPon()">
-            
-            <input type="number" id="lista2PromedioPon" disabled>
-            <input type="number" id="lista3PromedioPon" disabled>
-            <button type="button" id="buttonCalPond" onclick="calcularPonderado();" id="">lista</button>
-            <button type="button" onclick="datosPromedioPon();" id="buttonInUnoAunoPromedioPon" disabled>uno por uno </button>
-            <button type="button" onclick="calcularUnoPorUnoPromedioPon();" id="buttonCalcInUnoAunoPromedioPon" disabled>calcular </button>
-        </form>
+
+            <form action="" class="container-form">
+                <h2> Moda</h2>
+                <label for="lista">Ingrese la lista separa por comas...</label>
+                <textarea name="listaModa" id="listaModa" onfocus="clearTextareaModa();" cols="30"
+                    rows="10"> Ingrese la lista separada por comas... </textarea>
+                    <section class="container-form-cupon">
+                    <label for="lista2Moda"> ingrese uno por uno los elementos de la lista</label>
+                <input class="uno-por-uno" type="checkbox" name="checkboxUnoPorunoModa" id="checkboxUnoPorunoModa"
+                    onclick="checkboxAbleModa()">
+                    </section>
+                <input class="form-container-input" type="number" id="lista2Moda" disabled>
+                <button class="form-container-button" type="button" onclick="calcularModa();"
+                    id="buttonCalcularModa">lista</button>
+                <button class="form-container-button" type="button" onclick="datosModa();" id="buttonInUnoAunoModa"
+                    disabled>uno por uno </button>
+                <button class="form-container-button" type="button" onclick="calcularUnoPorUnoModa();"
+                    id="buttonCalcInUnoAunoModa" disabled>calcular </button>
+            </form>
+        </div>
+
     </div>
 </div>
+
 <body>
-    
+
 </body>
 <script src="promedio.js"></script>
+
 </html>
