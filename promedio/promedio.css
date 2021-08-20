@@ -155,3 +155,10 @@ input[type=number] {
     background: transparent;
     margin: 45px;
 }
+.form-textarea{
+    padding: 15px;
+}
+.resp-cal-pro{
+    font-weight: bold;
+    margin: 10px;
+}

@@ -23,6 +23,7 @@ function ejecutarObtenerLista() {
 }
 
 function promedio() {
+  var respCalPro=document.getElementById("resp-cal-pro")
   var lista = ejecutarObtenerLista();
   if (isNaN(lista[lista.length-1])){
     lista.pop();
@@ -33,7 +34,11 @@ function promedio() {
   });
   const promedio = suma / lista.length;
   console.log(promedio);
-  return promedio;
+  respCalPro.innerHTML="EL PROMEDIO ES "+promedio.toFixed(2)
+  setTimeout(function(){
+    window.location.reload(1);
+ }, 5000);
+  
 }
 
 function clearTextareaPromedio() {
@@ -63,12 +68,17 @@ function ingresarDato(dato) {
 }
 
 function datos() {
+  var ingrePro=document.getElementById("ingre-pro")
   var lista2 = document.getElementById("lista2");
   var datonuevo = lista2.value;
+  if(datonuevo!=""){
+    
   var ingresarDat = ingresarDato(datonuevo);
   console.log(ingresarDat);
   clearinput();
+  ingrePro.innerHTML=" "+ingresarDat
   return ingresarDat;
+}
 }
 
 function calcularUnoPorUno() {

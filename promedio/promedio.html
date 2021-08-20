@@ -33,9 +33,10 @@
                 <h2> Promedio</h2>
                 <label id="label-promedio" for="lista">Ingrese la lista separada por punto y comas...</label>
                 <textarea class="form-textarea" name="lista" id="listaPromedio" onfocus="clearTextareaPromedio();" cols="30"
-                    rows="10">  Ingrese la lista separada por punto y comas... </textarea>
+                    rows="10">  Ingrese la lista separada por punto y comas... 20;15;30;</textarea>
+                    <div class="resp-cal-pro" id="resp-cal-pro"></div>
                     <button class="form-container-button" id="btn-promedio" type="button" onclick="promedio();"
-                    id="buttonPromedio">lista</button>
+                    id="buttonPromedio">Calcular</button>
                     <section class="container-form-cupon">
                     <label class="label2" for="lista2"> Ingrese uno por uno los elementos de la lista</label>
                 
@@ -57,10 +58,11 @@
 
             <form action="" class="container-form">
                 <h2> Promedio ponderado</h2>
-                <label id="labelpromediopon" for="lista">Ingrese la lista separada por punto y comas...</label>
+                <label id="labelpromediopon" for="lista">Ingrese la lista separada por punto y comas... </label>
                 <textarea class="form-textarea" name="listaPromedioPon" id="listaPromedioPon" onfocus="clearTextareaPromedioPon();" cols="30"
-                    rows="10"> Ingrese la lista separada por punto y comas... </textarea>
-                    <button class="form-container-button" type="button" id="buttonCalPond" onclick="calcularPonderado();" id="">lista</button>
+                    rows="10"> Ingrese la lista separada por punto y comas... ejemplo 20;15;30;</textarea>
+                    <div class="resp-cal-pro" id="resp-cal-pro-pon"></div>
+                    <button class="form-container-button" type="button" id="buttonCalPond" onclick="calcularPonderado();" id="">Calcular</button>
                     <section class="container-form-cupon">
                     
                     <label class="label2" for="lista2PromedioPon"> Ingrese uno por uno los elementos de la lista</label>
@@ -73,9 +75,10 @@
                 <input class="form-container-input" type="number" id="lista3PromedioPon" disabled>
 
             </section>
-              <section class="ingre-uno-a-uno" id ="ingre-pro-pon"></section>
-                <button class="form-container-button" type="button" onclick="datosPromedioPon();"
+            <button class="form-container-button" type="button" onclick="datosPromedioPon();"
                     id="buttonInUnoAunoPromedioPon" disabled>uno por uno </button>
+              <section class="ingre-uno-a-uno" id ="ingre-pro-pon"></section>
+                
                 <button class="form-container-button" type="button" onclick="calcularUnoPorUnoPromedioPon();"
                     id="buttonCalcInUnoAunoPromedioPon" disabled>calcular </button>
             </form>
@@ -88,9 +91,10 @@
 
             <form action="" class="container-form">
                 <h2> Mediana</h2>
-                <label id="label-mediana" for="listaMediana">Ingrese la lista separa por punto y comas...</label>
+                <label id="label-mediana" for="listaMediana">Ingrese la lista separa por punto y comas... </label>
                 <textarea class="form-textarea" name="listaMediana" id="listaMediana" onfocus="clearTextareaMediana();" cols="30"
-                    rows="10">  Ingrese la lista separada por punto y comas... </textarea>
+                    rows="10">  Ingrese la lista separada por punto y comas... ejemplo 20;15;30;</textarea>
+                    <div class="resp-cal-pro" id="resp-cal-med"></div>
                     <button class="form-container-button" type="button" onclick="calcularMediana();"
                     id="buttonCalcularMediana">lista</button>
                     <section class="container-form-cupon">
@@ -99,9 +103,10 @@
                     onclick="checkboxAbleMediana();">
                     </section>
                 <input class="form-container-input" type="number" id="lista2Mediana" disabled>
-                <section class="ingre-uno-a-uno" id="ingre-med"></section>
                 <button class="form-container-button" type="button" onclick="datosMediana();"
                     id="buttonInUnoAunoMediana" disabled>uno por uno </button>
+                <section class="ingre-uno-a-uno" id="ingre-med"></section>
+                
                 <button class="form-container-button" type="button" onclick="calcularUnoPorUnoMediana();"
                     id="buttonCalcInUnoAunoMediana" disabled>calcular </button>
             </form>
@@ -114,7 +119,8 @@
                 <h2> Moda</h2>
                 <label id="label-moda" for="lista">Ingrese la lista separa por punto y comas...</label>
                 <textarea class="form-textarea" name="listaModa" id="listaModa" onfocus="clearTextareaModa();" cols="30"
-                    rows="10"> Ingrese la lista separada por punto y comas... </textarea>
+                    rows="10"> Ingrese la lista separada por punto y comas... ejemplo 20;15;30;</textarea>
+                    <div class="resp-cal-pro" id="resp-cal-moda"></div>
                     <button class="form-container-button" type="button" onclick="calcularModa();"
                     id="buttonCalcularModa">lista</button>
                     <section class="container-form-cupon">
@@ -123,9 +129,10 @@
                     onclick="checkboxAbleModa()">
                     </section>
                 <input class="form-container-input" type="number" id="lista2Moda" disabled>
-                <section class="ingre-uno-a-uno" id="ingre-moda"></section>
                 <button class="form-container-button" type="button" onclick="datosModa();" id="buttonInUnoAunoModa"
-                    disabled>uno por uno </button>
+                disabled>uno por uno </button>
+                <section class="ingre-uno-a-uno" id="ingre-moda"></section>
+              
                 <button class="form-container-button" type="button" onclick="calcularUnoPorUnoModa();"
                     id="buttonCalcInUnoAunoModa" disabled>calcular </button>
             </form>
