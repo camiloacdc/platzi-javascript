@@ -98,14 +98,26 @@ function checkboxAble() {
   var checkboxUnoPoruno = document.getElementById("checkboxUnoPoruno");
   var lista2 = document.getElementById("lista2");
   var listaPromedio=document.getElementById("listaPromedio");
-  var buttonPromedio=document.getElementById("buttonPromedio");
+  var buttonPromedio=document.getElementById("btn-promedio");
+  var ingrepro=document.getElementById("ingre-pro");
+  var labelpromedio=document.getElementById("label-promedio")
   checkboxUnoPoruno.onchange = function () {
     buttonInUnoAuno.disabled = !this.checked;
     buttonCalcInUnoAuno.disabled = !this.checked;
     lista2.disabled = !this.checked;
     listaPromedio.disabled=this.checked;
+    listaPromedio.hidden=this.checked;
     buttonPromedio.disabled=this.checked;
+    buttonPromedio.hidden=this.checked;
+    labelpromedio.hidden=this.checked;
   };
+  if (checkboxUnoPoruno.checked){
+ingrepro.style.display="block";
+
+  }else{
+ingrepro.style.display="none";
+
+  }
 }
 
 function ejecutarObtenerListaMediana() {
@@ -186,13 +198,26 @@ function checkboxAbleMediana() {
   var lista2Mediana = document.getElementById("lista2Mediana");
   var buttonCalcularMediana=document.getElementById("buttonCalcularMediana");
   var listaMediana=document.getElementById("listaMediana");
+  var ingremed=document.getElementById("ingre-med");
+  var labelmediana=document.getElementById("label-mediana");
   checkboxUnoPorunoMediana.onchange = function () {
     buttonInUnoAunoMediana.disabled = !this.checked;
     buttonCalcInUnoAunoMediana.disabled = !this.checked;
     lista2Mediana.disabled = !this.checked;
     buttonCalcularMediana.disabled = this.checked;
+    buttonCalcularMediana.hidden = this.checked;
     listaMediana.disabled= this.checked;
+    listaMediana.hidden= this.checked;
+    labelmediana.hidden= this.checked;
   };
+
+  if (checkboxUnoPorunoMediana.checked){
+    ingremed.style.display="block";
+    
+      }else{
+        ingremed.style.display="none";
+    
+      }
 }
 
 function ingresarDatoMediana(dato) {
@@ -313,13 +338,26 @@ function checkboxAbleModa() {
   var lista2Moda = document.getElementById("lista2Moda");
   var listaModa =document.getElementById("listaModa");
   var buttonCalcularModa=document.getElementById("buttonCalcularModa");
+  var ingremod=document.getElementById("ingre-moda");
+  var labelModa=document.getElementById("label-moda");
   checkboxUnoPorunoModa.onchange = function () {
     buttonInUnoAunoModa.disabled = !this.checked;
     buttonCalcInUnoAunoModa.disabled = !this.checked;
     lista2Moda.disabled = !this.checked;
     listaModa.disabled = this.checked;
+    listaModa.hidden=this.checked;
+    labelModa.hidden=this.checked;
     buttonCalcularModa.disabled = this.checked;
+    buttonCalcularModa.hidden = this.checked;
   };
+
+  if (checkboxUnoPorunoModa.checked){
+    ingremod.style.display="block";
+    
+      }else{
+        ingremod.style.display="none";
+    
+      }
 }
 
 /*obtener moda de otra forma */
@@ -445,14 +483,26 @@ function checkboxAblePromedioPon() {
   var lista3PromedioPon = document.getElementById("lista3PromedioPon");
   var listaPromedioPon =document.getElementById("listaPromedioPon");
   var buttonCalPond=document.getElementById("buttonCalPond");
+  var ingrepropon=document.getElementById("ingre-pro-pon");
+  var labelpromediopon=document.getElementById("labelpromediopon");
   checkboxUnoPorunoPromedioPon.onchange = function () {
     buttonInUnoAunoPromedioPon.disabled = !this.checked;
     buttonCalcInUnoAunoPromedioPon .disabled = !this.checked;
     lista2PromedioPon.disabled = !this.checked;
     lista3PromedioPon.disabled = !this.checked;
     listaPromedioPon.disabled=this.checked;
+    listaPromedioPon.hidden=this.checked;
     buttonCalPond.disabled=this.checked;
+    buttonCalPond.hidden=this.checked;
+    labelpromediopon.hidden=this.checked;
   };
+  if (checkboxUnoPorunoPromedioPon.checked){
+    ingrepropon.style.display="block";
+    
+      }else{
+    ingrepropon.style.display="none";
+    
+      }
 }
 
 function clearTextareaPromedioPon(){
