@@ -2,8 +2,9 @@ var lista = [];
 var listaMediana=[];
 var listaModa=[];
 var listaPromedioPon=[];
-function obtenerLista(lista) {
-  const cadenaSinEspacios = lista.trim();
+
+function obtenerLista(lista1) {
+  const cadenaSinEspacios = lista1.trim();
   const cadenasSinLineaslista=cadenaSinEspacios.replace(/(\r\n|\n|\r)/gm, "");
   var arrayCadenas = cadenasSinLineaslista.split(";");
 
@@ -11,34 +12,41 @@ function obtenerLista(lista) {
 }
 
 function ejecutarObtenerLista() {
-  const lista = document.getElementById("listaPromedio");
-  const listaValue = lista.value;
+  const lista1 = document.getElementById("listaPromedio");
+  const listaValue = lista1.value;
+  var listaFinal1 ="";
+  if(listaValue!=""){
   var arrayCadenas = obtenerLista(listaValue);
-  var listaFinal = [];
+  listaFinal1 = [];
   for (var i = 0; i < arrayCadenas.length; i++) {
-    listaFinal.push(parseInt(arrayCadenas[i]));
+    listaFinal1.push(parseInt(arrayCadenas[i]));
   }
-  console.log(listaFinal);
-  return listaFinal;
+  console.log(listaFinal1);
+  return listaFinal1;
+} else{
+  return listaFinal1;
 }
+}
+
 
 function promedio() {
   var respCalPro=document.getElementById("resp-cal-pro")
-  var lista = ejecutarObtenerLista();
-  if (isNaN(lista[lista.length-1])){
-    lista.pop();
+  var lista1 = ejecutarObtenerLista();
+  if (lista1==""){alert("ingresa la lista")}else{
+  if (isNaN(lista1[lista1.length-1])){
+    lista1.pop();
     
   }
-  const suma = lista.reduce(function (inicio = 0, siguiente) {
+  const suma = lista1.reduce(function (inicio = 0, siguiente) {
     return inicio + siguiente;
   });
-  const promedio = suma / lista.length;
+  const promedio = suma / lista1.length;
   console.log(promedio);
   respCalPro.innerHTML="EL PROMEDIO ES "+promedio.toFixed(2)
   setTimeout(function(){
     window.location.reload(1);
  }, 5000);
-  
+}
 }
 
 function clearTextareaPromedio() {
@@ -77,17 +85,22 @@ function datos() {
   console.log(ingresarDat);
   clearinput();
   ingrePro.innerHTML=" "+ingresarDat
-  return ingresarDat;
+  //return ingresarDat;
 }
 }
 
 function calcularUnoPorUno() {
+  const ingrepro=document.getElementById("ingre-pro")
   if (lista.length > 0) {
     var sumaLista = lista.reduce(function (inicio = 0, siguiente) {
       return inicio + siguiente;
     });
     const promedio = sumaLista / lista.length;
-    console.log(promedio);
+    //console.log(promedio);
+    ingrepro.innerHTML+="<br><br> <p class='text-area-resultado'> el promedio es  "+ promedio.toFixed(2)+"</p>"
+    setTimeout(function(){
+      window.location.reload(1);
+   }, 10000);
   } else {
     alert("ingresa un numero");
   }

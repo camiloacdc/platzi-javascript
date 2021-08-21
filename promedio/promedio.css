@@ -162,3 +162,12 @@ input[type=number] {
     font-weight: bold;
     margin: 10px;
 }
+.text-area-resultado{
+     font-weight: bold;
+     font-size: 25px;
+}
+
+.form-textarea::placeholder {
+    color: #333;
+    font-size: 1.2em;
+  }
