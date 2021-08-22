@@ -468,8 +468,15 @@ function calcularUnoPorUnoModa() {
 function obtenerListaPonderado(lista) {
   const cadenaSinEspacios = lista.trim();
   const cadenasSinLineaslista = cadenaSinEspacios.replace(/(\r\n|\n|\r)/gm, "");
-  var arrayCadenas = cadenasSinLineaslista.split(";");
+  
+  const patt1 = /^\d+(,\d+;)/g;
+  const result = cadenasSinLineaslista.match(patt1);
+  var arrayCadenas = "";
 
+  if (result != null) {
+    arrayCadenas = cadenasSinLineaslista.split(";");
+console.log(result)
+  }
   return arrayCadenas;
 }
 
@@ -477,6 +484,7 @@ function ejecutarObtenerListaPonderado() {
   const lista = document.getElementById("listaPromedioPon");
   const listaValue = lista.value;
   var arrayCadenas = obtenerListaPonderado(listaValue);
+  if(arrayCadenas!=""){
   var listaFinal = [];
   for (var i = 0; i < arrayCadenas.length; i++) {
     listaFinal.push(arrayCadenas[i]);
@@ -488,9 +496,11 @@ function ejecutarObtenerListaPonderado() {
   console.log(listaFinal);
   return listaFinal;
 }
+}
 
 function ejecutarObtenerListaPonderadoFinal() {
   const listaPonderado = ejecutarObtenerListaPonderado();
+  if(listaPonderado!=undefined){
   const nuevalista = []
   for (i = 0; i < listaPonderado.length; i++) {
     nuevalista.push(listaPonderado[i].split(","))
@@ -500,8 +510,11 @@ function ejecutarObtenerListaPonderadoFinal() {
   console.log(nuevalista)
   return nuevalista;
 }
+}
 function calcularPonderado() {
+  const propon=document.getElementById("resp-cal-pro-pon")
   var listaPonderado = ejecutarObtenerListaPonderadoFinal();
+  if(listaPonderado!=undefined){
   var sumaCreditos = 0;
   var pondeTotal = 0;
   var sumaMulti = 0;
@@ -520,7 +533,11 @@ function calcularPonderado() {
   console.log(multi)
   pondeTotal = sumaMulti / sumaCreditos
   console.log(pondeTotal)
-}
+propon.innerHTML="el promedio ponderado es"+pondeTotal.toFixed(2);
+setTimeout(function () {
+  window.location.reload(1);
+}, 10000);
+}else{alert("hay un problema con la lista, sigue el ejemplo 20,30;30,20;")}}
 /**uno por uno ponderado */
 function checkboxAblePromedioPon() {
   var buttonCalcInUnoAunoPromedioPon = document.getElementById("buttonCalcInUnoAunoPromedioPon");
@@ -570,17 +587,25 @@ function clearinputPromedioPon() {
 function datosPromedioPon() {
   var lista2PromedioPon = document.getElementById("lista2PromedioPon");
   var lista3PromedioPon = document.getElementById("lista3PromedioPon");
+  const ingreProPon=document.getElementById("ingre-pro-pon");
   var value1 = parseFloat(lista2PromedioPon.value);
-  var value2 = parseFloat(lista3PromedioPon.value);
-  var tempData = [];
-  var sumaArriba = 0;
-  var sumaCreditos = 0;
-  var totalPonderado = 0;
+    var value2 = parseFloat(lista3PromedioPon.value);
   if (lista2PromedioPon.value === "" || lista3PromedioPon.value === "") {
     alert("ingresa un numero");
   } else {
     listaPromedioPon.push({ value1, value2 });
+    ingreProPon.innerHTML=ingreProPon.innerHTML+=" valor:  "+value1+" ponderación: "+ value2+" <br>";
+  console.log(listaPromedioPon)
+    return listaPromedioPon;}
+}
 
+function calcularUnoPorUnoPromedioPon(){
+  var tempData = [];
+    var sumaArriba = 0;
+    var sumaCreditos = 0;
+    var totalPonderado = 0;
+    const ingreProPon=document.getElementById("ingre-pro-pon");
+  if(listaPromedioPon!=undefined){
     for (var i = 0; i < listaPromedioPon.length; i++) {
       algo = listaPromedioPon[i].value1 * listaPromedioPon[i].value2;
       tempData.push(algo);
@@ -594,13 +619,14 @@ function datosPromedioPon() {
 
     totalPonderado = sumaArriba / sumaCreditos
   }
-
-  clearinputPromedioPon();
   console.log(totalPonderado);
-  // console.log(listaPromedioPon);
-  console.log(sumaCreditos);
-  // console.log(tempData);
-  console.log(sumaArriba);
-  return listaPromedioPon;
+    // console.log(listaPromedioPon);
+    console.log(sumaCreditos);
+    // console.log(tempData);
+    console.log(sumaArriba);
+    ingreProPon.innerHTML += "<br><br> <p class='text-area-resultado'> EL PROMEDIO PONDERADO ES  " + totalPonderado + "</p>"
+    setTimeout(function () {
+      window.location.reload(1);
+    }, 10000);
 }
 
