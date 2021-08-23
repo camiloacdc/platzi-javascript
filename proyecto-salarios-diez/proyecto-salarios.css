@@ -38,7 +38,12 @@ text-align: center;
     .main{
         display: flex;
         align-items: center;
-        justify-content: center;   
+        justify-content: space-evenly;   
+   }
+   .resultados{
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly; 
    }
    .container{
     display: flex;
@@ -46,8 +51,45 @@ text-align: center;
     border-radius: 20px;
     justify-content: center;
     border:1px solid black;
-    min-height: 700px;
-    width: 600px;
+    min-height: 500px;
+    width: 450px;
+    font-family: 'Zen Loop', cursive;
+    background: #DBFF33;
+}
+.parrafo-resultados{
+    text-align: center;
+}
+.mostrar-pais > h5{
+    font-size: 15px;
+}
+.mostrar-pais {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    
+}.salario > p, .nombre > p{
+    padding: 5px;
+    margin: 5px;
+}
+.salario{
+    font-size: 12px;
+}
+.algo{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+.container-pais{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: start;
+    
+    border:1px solid black;
+    min-height: 500px;
+    width: 450px;
     font-family: 'Zen Loop', cursive;
     background: #DBFF33;
 }

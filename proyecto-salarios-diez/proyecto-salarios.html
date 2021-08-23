@@ -28,21 +28,69 @@
             </ul>
         </div>
     <div class="main">
-        <div class="resultados"></div>
+        <div class="container-pais">
+            <section>
+            <p class="parrafo-resultados">empleados por país</p>
+        </section>
+        <div class="resultados">
+            <div class="mostrar-pais" id="pais-argentina"><h5>Argentina</h5>
+                <div class="algo">
+                <div class="nombre" id="nombre-argentina"></div> 
+                <div class="salario" id="salario-argentina"></div>
+            </div>
+            </div>
+            <div class="mostrar-pais" id="pais-mexico"><h5>México</h5>
+                <div class="algo">
+            <div class="nombre" id="nombre-mexico"></div> <div class="salario" id="salario-mexico"></div>
+            </div>
+        </div>
+        
+            <div class="mostrar-pais" id="pais-colombia"><h5>Colombia</h5>
+                <div class="algo">
+            <div class="nombre" id="nombre-colombia"></div> <div class="salario" id="salario-colombia">
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
         <div class="container">
             <form action="" class="container-form">
-                <label for="pais">ingresa el pais ( solo Colombia, Mexico ó Argentina)</label>
-                <input type="text" class="form-container-input" id="pais" name="pais">
-                <label for="nombre">ingresa el nombre de la persona</label>
+                <label for="pais">Ingresa el pais ( solo Colombia, Mexico ó Argentina)</label>
+                <!-- <input type="text" class="form-container-input" id="pais" name="pais"> -->
+                <select  id="pais" name="pais">
+                    <option value="Colombia">Colombia</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Argentina">Argentina</option>
+                    
+                  </select>
+
+                <label for="nombre">Ingresa el nombre de la persona</label>
                 <input type="text" class="form-container-input" id="nombre" name="nombre">
-                <label for="salario">ingresa el salario</label>
+                <label for="salario">Ingresa el salario</label>
                 <input type="number" class="form-container-input" name="salario" id="salario">
-                <button type="button " class="form-container-button" id="buttonIngresarPersona" onclick="ingresarDato();">ingresar persona</button>
-                <section class="calc-all-promedios">
-                <button type="button" class="form-container-button" id="calcularPromedioGeneral" onclick="ordenarSalarios();">Promedio salario total</button>
-                <button type="button" class="form-container-button" id="calcularPromedioDiez" onclick="medianaTop();">Promedio 10% de la población</button>
-            </section>
+                <button type="button" class="form-container-button" id="buttonIngresarPersona" onclick="ingresarDato();">Ingresar persona</button>
+                
             </form>
+        </div>
+        <div class="container">
+
+    <form action="" class="container-form">
+        <label for="pais">Selecciona el pais ( solo Colombia, Mexico ó Argentina)</label>
+                <!-- <input type="text" class="form-container-input" id="pais" name="pais"> -->
+                <select  id="pais-calcular" name="pais">
+                    <option value="Colombia">Colombia</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Argentina">Argentina</option>
+                    
+                  </select>
+    <button type="button" class="form-container-button" id="calcularPromedioGeneral" onclick="ordenarSalarios();">Promedio salario total</button>
+    <button type="button" class="form-container-button" id="calcularPromedioDiez" onclick="medianaTop();">Promedio 10% de la población</button>
+</form>
+
+<section class="calc-all-promedios">
+               
+</section>
+
         </div>
     </div>
 
