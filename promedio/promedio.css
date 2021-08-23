@@ -171,3 +171,10 @@ input[type=number] {
     color: #333;
     font-size: 1.2em;
   }
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font: 2em;
+    font-weight: bold;
+}

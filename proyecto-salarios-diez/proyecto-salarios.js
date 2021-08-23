@@ -6,7 +6,7 @@ function validaPais(){
     var pais= document.getElementById("pais")
     var valuePais=pais.value
     var paisValido="Pais valido"
-    if(valuePais.toLowerCase()!="argentina" && valuePais.toLowerCase()!="colombia" && valuePais.toLowerCase()!="mexico" && valuePais.toLowerCase()!="méxico")
+    if(valuePais.toLowerCase()=="argentina" || valuePais.toLowerCase()=="colombia" || valuePais.toLowerCase()=="mexico" || valuePais.toLowerCase()=="méxico")
     {
         paisValido="pais no valido"
     }
@@ -108,5 +108,5 @@ var tamano=listaSalarios.length;
 }
 
 
-var esto=Object.keys({colombia})[0]
-console.log(esto)
+// var esto=Object.keys({colombia})[0]
+// console.log(esto)

@@ -15,7 +15,7 @@
             <h1> Proyecto Final curso Práctico de Javacript Platzi</h1>
         </div>
     </header>
-    <ul>
+   
         <div class="horizontal-menu">
             <ul>
                 <li><a href="../index.html" data-text="Inicio">Inicio</a></li>
@@ -28,24 +28,29 @@
             </ul>
         </div>
     <div class="main">
-        <div class="contianer-form">
-            <form action="">
+        <div class="resultados"></div>
+        <div class="container">
+            <form action="" class="container-form">
                 <label for="pais">ingresa el pais ( solo Colombia, Mexico ó Argentina)</label>
-                <input type="text" id="pais" name="pais">
+                <input type="text" class="form-container-input" id="pais" name="pais">
                 <label for="nombre">ingresa el nombre de la persona</label>
-                <input type="text" id="nombre" name="nombre">
+                <input type="text" class="form-container-input" id="nombre" name="nombre">
                 <label for="salario">ingresa el salario</label>
-                <input type="number" name="salario" id="salario">
-                <button type="button" id="buttonIngresarPersona" onclick="ingresarDato();">ingresar persona</button>
-                <button type="button" id="calcularPromedioGeneral" onclick="ordenarSalarios();">Promedio salario total</button>
-                <button type="button" id="calcularPromedioDiez" onclick="medianaTop();">Promedio 10% de la población</button>
+                <input type="number" class="form-container-input" name="salario" id="salario">
+                <button type="button " class="form-container-button" id="buttonIngresarPersona" onclick="ingresarDato();">ingresar persona</button>
+                <section class="calc-all-promedios">
+                <button type="button" class="form-container-button" id="calcularPromedioGeneral" onclick="ordenarSalarios();">Promedio salario total</button>
+                <button type="button" class="form-container-button" id="calcularPromedioDiez" onclick="medianaTop();">Promedio 10% de la población</button>
+            </section>
             </form>
         </div>
     </div>
 
     <footer class="footer">
-
-    </footer>
+        <p class="footer-text">Camilo Cubides</p>
+        <p class="footer-text">Copyright</p>
+        <p class="footer-text">Javascript Platzi</p>
+        </footer>
 
 </body>
 <script src="proyecto-salarios.js"></script>
