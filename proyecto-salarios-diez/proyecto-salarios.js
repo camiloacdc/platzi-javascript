@@ -44,8 +44,10 @@ function ingresarDato() {
     console.log(pais1[0].pais);
     var salario = document.getElementById("salario");
     var nombre = document.getElementById("nombre");
+    
     var salarioValue = salario.value
     var nombreValue = nombre.value
+    if(salarioValue!="" && nombreValue!=""){
     const paisArgentina = document.getElementById("nombre-argentina");
     const paisMexico = document.getElementById("nombre-mexico")
     const paiscolombia = document.getElementById("nombre-colombia")
@@ -70,6 +72,9 @@ function ingresarDato() {
         salariocolombia.innerHTML+="<p> salario: "+pais1[pais1.length - 1].salario + " </p>";
     }
     return pais1;
+}else{
+    alert("ingresa los datos")
+}
 }
 
 function listaSalarios() {
@@ -92,11 +97,13 @@ function listaSalarios() {
     });
     console.log(listaOrdenada);
     return listaOrdenada;
-}else{ alert("hola")}
+}else{ alert("la lista está vacia")}
 }
 
 function ordenarSalarios(){
     var lista=listaSalarios();
+    const calAllPromedios=document.getElementById("calc-all-promedios");
+    if (lista!=undefined){
     var listaOrdenada=lista.sort(function(salarios,salarioSigue){
         return salarios-salarioSigue
     })
@@ -107,37 +114,63 @@ function ordenarSalarios(){
     if((tamano % 2)==0){
     mediana=((listaOrdenada[mitad]+listaOrdenada[mitad-1])/2).toFixed(2)
     } else{
-        mediana=listaOrdenada[ mitad]
+        mediana=listaOrdenada[mitad]
     }
     console.log(mediana)
+    calAllPromedios.innerHTML+="La mediana es "+mediana+"<br>";
+    setTimeout(function () {
+        window.location.reload(1);
+      }, 10000);
     return mediana;
     
 }
+}
 
 function diezPorciento() {
-  var inicio = 0;
-  var corte = 0;
-  var listaOrdenada = lista.sort(function (salarios, salarioSigue) {
-    return salarios - salarioSigue;
-  });
-  tamano = listaOrdenada.length;
-  inicio = parseInt((tamano * 90) / 100);
-  corte = tamano - incio;
-  const salariosTop = listaOrdenada.splice(inicio, corte);
-  return salariosTop;
+    var inicio = 0;
+    var corte = 0;
+    const paisCalcular = document.getElementById("pais-calcular");
+    const paisValue = paisCalcular.value
+    let lista;
+    if (paisValue == "Colombia") {
+        lista = colombia;
+    } else if (paisValue == "Mexico") {
+        lista = mexico;
+    } else {
+        lista = argentina;
+    }
+    if (lista.length > 1) {
+
+        var listaOrdenada = lista.sort(function (salarios, salarioSigue) {
+            return salarios - salarioSigue;
+        });
+        tamano = listaOrdenada.length;
+        
+        inicio = parseInt((tamano * 90) / 100);
+        
+        corte = tamano - inicio;
+        const salariosTop = listaOrdenada.splice(inicio, corte);
+        return salariosTop;
+    } else {
+        alert("la lista está vacia")
+    }
 }
 
 function medianaTop(){
 var listaSalarios=diezPorciento();
+const calAllPromedios=document.getElementById("calc-all-promedios");
 var tamano=listaSalarios.length;
     var mitad=parseInt(tamano/2);
     var mediana= 0;
     if((tamano % 2)==0){
-    mediana=((listaOrdenada[mitad]+listaOrdenada[mitad-1])/2).toFixed(2)
+    mediana=((listaSalarios[mitad]+listaSalarios[mitad-1])/2).toFixed(2)
     } else{
-        mediana=listaOrdenada[ mitad]
+        mediana=listaSalarios[mitad];
     }
-    console.log(mediana)
+    calAllPromedios.innerHTML+="el salario promedio del 10% de la población es "+mediana.salario;
+    setTimeout(function () {
+        window.location.reload(1);
+      }, 10000);
     return mediana;
 }
 

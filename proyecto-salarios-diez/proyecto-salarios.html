@@ -30,7 +30,7 @@
     <div class="main">
         <div class="container-pais">
             <section>
-            <p class="parrafo-resultados">empleados por país</p>
+            <p class="parrafo-resultados">Empleados por país</p>
         </section>
         <div class="resultados">
             <div class="mostrar-pais" id="pais-argentina"><h5>Argentina</h5>
@@ -72,10 +72,10 @@
                 
             </form>
         </div>
-        <div class="container">
+        <div class="container-procesos">
 
     <form action="" class="container-form">
-        <label for="pais">Selecciona el pais ( solo Colombia, Mexico ó Argentina)</label>
+        <label for="pais" class="procesos-form-label">Selecciona el pais ( solo Colombia, Mexico ó Argentina)</label>
                 <!-- <input type="text" class="form-container-input" id="pais" name="pais"> -->
                 <select  id="pais-calcular" name="pais">
                     <option value="Colombia">Colombia</option>
@@ -85,13 +85,15 @@
                   </select>
     <button type="button" class="form-container-button" id="calcularPromedioGeneral" onclick="ordenarSalarios();">Promedio salario total</button>
     <button type="button" class="form-container-button" id="calcularPromedioDiez" onclick="medianaTop();">Promedio 10% de la población</button>
+    <section class="calc-all-promedios" id="calc-all-promedios">
+               
+    </section>
 </form>
 
-<section class="calc-all-promedios">
-               
-</section>
+
 
         </div>
+        
     </div>
 
     <footer class="footer">
